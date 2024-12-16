@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<title>Arvikar Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<style>
+  .main-wrapper {
+    background-color: #fff;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the main wrapper takes the full viewport height */
+    box-sizing: border-box; /* Includes padding and borders in the height calculation */
+    overflow: hidden; 
+  }
+  
+  .nav-header {
+    background-color: rgba(245, 245, 247, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #000;
+    padding: 0 70px;
+    font: 400 12px Inter, sans-serif;
+  }
+  
+  .nav-content {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+  
+  .nav-link {
+    margin: auto 0;
+  }
+  
+  .logo-primary {
+    aspect-ratio: 1.36;
+    object-fit: contain;
+    width: 60px;
+  }
+  
+  .logo-secondary {
+    aspect-ratio: 0.7;
+    object-fit: contain;
+    width: 31px;
+  }
+  
+  .hero-container {
+    background-color: #fff;
+    display: flex;
+    margin-top: 29px;
+    width: 92%;
+    flex-direction: column;
+  }
+  
+  .hero-content {
+    margin-right: 17px;
+  }
+  
+  .hero-columns {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .hero-image-column {
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+  }
+  
+  .hero-image {
+    aspect-ratio: 2.64;
+    object-fit: contain;
+    width: 348px;
+    border-radius: 25px;
+    z-index: 10;
+    margin: 12px -336px 0 0;
+  }
+  
+  .hero-text-column {
+    display: flex;
+    flex-direction: column;
+    width: 84%;
+    margin-left: 20px;
+  }
+  
+  .hero-section-wrapper {
+    display: flex;
+    min-height: 566px;
+    width: 100%;
+    flex-direction: column;
+    font-family: Inter, sans-serif;
+  }
+  
+  .hero-section-content {
+    align-items: center;
+    background-color: #f5f7fa;
+    display: flex;
+    min-height: 554px;
+    width: 100%;
+    gap: 40px 72px;
+    padding: 47px 29px 169px 100px;
+  }
+  
+  .hero-text-wrapper {
+    align-self: stretch;
+    display: flex;
+    min-width: 240px;
+    height: 103px;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 1165px;
+    margin: auto 0;
+  }
+  
+  .text-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .heading-primary {
+    color: #0e4908;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 1;
+  }
+  
+  .heading-accent {
+    color: #4caf4f;
+  }
+  
+  .description {
+    color: #0e4908;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 17px;
+    margin-top: 11px;
+  }
+  
+  .cta-button {
+    align-self: start;
+    border-radius: 2.784px;
+    background-color: #4caf4f;
+    margin-top: 22px;
+    gap: 7px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px 22px;
+  }
+  
+  .hero-image-secondary {
+    aspect-ratio: 1.28;
+    object-fit: contain;
+    width: 346px;
+    align-self: stretch;
+    min-width: 240px;
+    flex-grow: 1;
+    margin: auto 0;
+  }
+  
+  .projects-button {
+    border-radius: 100px;
+    background-color: #4caf4f;
+    align-self: center;
+    display: flex;
+    width: 223px;
+    gap: 17px;
+    color: #fff;
+    text-align: center;
+    margin: 51px 0 0 17px;
+    padding: 16px 35px;
+    font: 500 22px/1 Inter, sans-serif;
+  }
+  
+  .projects-text {
+    flex-grow: 1;
+    width: 108px;
+    margin: auto 0;
+  }
+  
+  .projects-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 24px;
+  }
+  
+  .gallery-section {
+    background-color: #fff;
+    display: flex;
+    margin-top: 84px;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    padding: 0 80px 30px;
+  }
+  
+  .gallery-content {
+    background-color: #fff;
+    display: flex;
+    width: 1265px;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    padding: 1px 20px;
+  }
+  
+  .gallery-image {
+    aspect-ratio: 1.84;
+    object-fit: contain;
+    width: 100%;
+  }
+  
+  .divider {
+    align-self: center;
+    margin-top: 37px;
+    width: 1307px;
+    height: 6px;
+    border: 1px solid #4caf4f;
+    position: relative;
+    top: 40px; left: 0px;
+  }
+  
+  .contact-section {
+    align-self: center;
+    margin-top: 111px;
+    width: 957px;
+  }
+  
+  .contact-columns {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .contact-text-column {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+  }
+  
+  .contact-text-content {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    font-family: Open Sans, sans-serif;
+    color: #011334;
+    margin: auto 0;
+  }
+  
+  .contact-heading-wrapper {
+    display: flex;
+    max-width: 100%;
+    width: 360px;
+    flex-direction: column;
+  }
+  
+  .contact-heading {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .contact-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-top: 20px;
+  }
+  
+  .contact-spacer {
+    align-self: start;
+    display: flex;
+    min-height: 70px;
+    margin-top: 30px;
+  }
+  
+  .contact-form-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .contact-form {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .name-fields {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .first-name-wrapper,
+  .last-name-wrapper,
+  .email-wrapper,
+  .phone-wrapper,
+  .message-wrapper {
+    flex: 1 1 calc(50% - 15px); /* Adjust width for smaller screens */
+    min-width: 250px;
+  }
+  
+  .message-wrapper {
+    flex: 1 1 100%;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .submit-wrapper {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .name-fields {
+      flex-direction: column;
+    }
+  
+    .first-name-wrapper,
+    .last-name-wrapper {
+      min-width: 100%;
+    }
+  
+    .form-fields {
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-form {
+      padding: 15px;
+    }
+  
+    .submit-button {
+      width: 100%;
+    }
+  }  
+  .footer {
+  background-color: #1d3208;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+  width: 100%; /* Make it span the full width */
+  box-sizing: border-box;
+  font: 400 16px/1.5 Inter, sans-serif;
+  position: relative;
+  top: 40px; left: 0px;
+  
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.copyright {
+  text-align: center;
+  flex: 1;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.social-text {
+  display: none; /* Hide the text on smaller screens */
+}
+
+.social-icon-primary, .social-icon-secondary {
+  width: 24px;
+  height: auto;
+}
+
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .main-wrapper {
+      padding-bottom: 100px;
+    }
+  
+    .nav-header {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  
+    .hero-container {
+      max-width: 100%;
+      margin-right: 4px;
+    }
+  
+    .hero-content {
+      max-width: 100%;
+      margin-right: 10px;
+    }
+  
+    .hero-columns {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  
+    .hero-image-column {
+      width: 100%;
+    }
+  
+    .hero-text-column {
+      width: 100%;
+    }
+  
+    .hero-section-wrapper {
+      max-width: 100%;
+    }
+  
+    .hero-section-content {
+      max-width: 100%;
+      padding: 0 20px 100px;
+    }
+  
+    .hero-text-wrapper {
+      max-width: 100%;
+    }
+  
+    .text-content {
+      max-width: 100%;
+    }
+  
+    .heading-primary {
+      max-width: 100%;
+      font-size: 40px;
+    }
+  
+    .description {
+      max-width: 100%;
+    }
+  
+    .cta-button {
+      padding: 0 20px;
+    }
+  
+    .projects-button {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  
+    .gallery-section {
+      max-width: 100%;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  
+    .gallery-image {
+      max-width: 100%;
+    }
+  
+    .contact-section {
+      margin-top: 40px;
+    }
+  
+    .contact-text-content {
+      margin-top: 40px;
+    }
+  
+    .contact-form {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  
+    .message-input {
+      padding-bottom: 110px;
+    }
+  
+    .submit-button {
+      padding: 0 20px;
+    }
+  
+    .footer {
+      max-width: 100%;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+
+
+/* Styling for individual slides */
+.mySlides {
+  display: none; /* Hide slides initially */
+  position: relative; /* Position relative to container */
+  top: 40px; /* Space from the top */
+  left: 0; /* Align to the container */
+  width: calc(100% - 40px); /* Full screen width minus gaps */
+  max-width: 500px; /* Constrain size for larger screens */
+  height: auto; /* Maintain aspect ratio automatically */
+  aspect-ratio: 16 / 9; /* Ensure uniform aspect ratio */
+  margin: 0 auto; /* Center slide horizontally */
+  border: 4px solid rgba(0, 0, 0, 0.15); /* Subtle border */
+  border-radius: 12px; /* Smooth rounded corners */
+  object-fit: cover; /* Make the content fit neatly */
+  box-sizing: border-box; /* Include padding/border in size */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Depth with soft shadow */
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth effects */
+}
+
+/* Hover effect for slides */
+.mySlides:hover {
+  transform: scale(1.05); /* Gentle zoom-in on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 600px; /* Constrain slider width */
+  margin: 20px auto; /* Center the slider with additional space on top */
+  padding: 20px; /* Space around the content */
+  text-align: center; /* Align content centrally */
+  position: relative; /* Relative for navigation controls */
+  overflow: hidden; /* Hide overflow for smooth transitions */
+  background-color: #f7f7f7; /* Light grey background */
+  border-radius: 25% 10%; /* Rounded corners for a polished look */
+  box-shadow: 10px 5px 5px #4caf4f; /* Subtle shadow for depth */
+  margin-top: 5%;
+  max-width: fit-content;
+}
+
+
+
+/* Navigation buttons */
+.slider-container .prev,
+.slider-container .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 16px;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.slider-container .prev:hover,
+.slider-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+.slider-container .prev {
+  left: 10px;
+}
+
+.slider-container .next {
+  right: 10px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .mySlides {
+    width: calc(100% - 30px); /* Adjust width for smaller screens */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+  }
+
+  .slider-container {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .mySlides {
+    width: calc(100% - 20px); /* Utilize screen width effectively */
+    aspect-ratio: 16 / 9; /* Maintain uniform scaling */
+  }
+
+  .slider-container .prev,
+  .slider-container .next {
+    padding: 8px 16px; /* Smaller buttons for very small screens */
+    font-size: 14px; /* Adjust font size */
+  }
+}
+
+
+.slider-title {
+  text-align: center;
+  font-size: 24px; /* Slightly larger font for better emphasis */
+  font-weight: 700; /* Bolder text for better visibility */
+  color: #4caf4f; /* Professional green shade to match your theme */
+  margin-top: 50px; /* Adjusted spacing for better alignment */
+  padding: 10px 20px; /* Added padding for a cleaner look */
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa; /* Subtle background color for contrast */
+  border-radius: 8px; /* Smooth corners for a polished appearance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: inline-block; /* Prevents stretching across the screen */
+  max-width: 80%; /* Constrains the width for long titles */
+  line-height: 1.5; /* Improves readability for multi-line titles */
+}
+
+
+  @media (max-width: 768px) {
+    .slider-title {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slider-title {
+      font-size: 16px;
+    }
+  }
+
+
+
+
+
+  </style>
+  
+  <div class="main-wrapper">
+    <nav class="nav-header">
+      <div class="nav-content">
+        <a href="#" class="nav-link">Home</a>
+
+        <img src="https://cdn.builder.io/api/v1/image/assets/0a50a19bf8954012b3474c20cf8bf513/e83ead1bdd5a9909f29287af875bab8867ac903ee71ee36cb6dac52d4f751f5c?apiKey=0a50a19bf8954012b3474c20cf8bf513&" alt="Primary Logo" class="logo-primary" />
+        <img src="https://cdn.builder.io/api/v1/image/assets/0a50a19bf8954012b3474c20cf8bf513/840b29bdf6536968e54fca6e816902b2e7a72faf87c3693dfa4cdb906fbeec54?apiKey=0a50a19bf8954012b3474c20cf8bf513&" alt="Secondary Logo" class="logo-secondary" />
+      </div>
+    </nav>
+  
+    <main class="hero-container">
+      <div class="hero-content">
+        <div class="hero-columns">
+          <div class="hero-image-column">
+            <img src="A (1).jpg" alt="Hero Illustration" class="hero-image" />
+          </div>
+          <div class="hero-text-column">
+            <section class="hero-section-wrapper">
+              <div class="hero-section-content">
+                <div class="hero-text-wrapper">
+                  <div class="text-content">
+                    <h1 class="heading-primary">
+                      Exploring Innovation and Excellence in Technology
+                      <span class="heading-accent">-Projects</span>
+                    </h1>
+                    <p class="description">
+                      Dive into a curated collection of projects showcasing technical expertise, innovative solutions, and impactful implementations. Each project reflects a blend of creativity, problem-solving, and proficiency across diverse technologies.
+                      <br />
+                      I'm <span class="heading-accent">Akash Arvikar</span>, a results-driven software engineer with expertise in Python, web development, data visualization, and cloud technologies. I specialize in developing scalable, efficient, and user-friendly applications, delivering impactful solutions tailored to meet business needs.
+                    </p>
+                  </div>
+                  <a href="https://github.com/saket1919" target="_blank">
+                    <button class="cta-button">Explore</button>
+                  </a>
+                  
+                </div>
+                <img src="https://cdn.builder.io/api/v1/image/assets/0a50a19bf8954012b3474c20cf8bf513/12f3a1b51406aaff4ee9de441b76034d45e86a0bba0ab1be0935af18e7e00831?apiKey=0a50a19bf8954012b3474c20cf8bf513&" alt="Secondary Hero Image" class="hero-image-secondary" />
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+  
+      <button class="projects-button">
+        <span class="projects-text">PROJECTS</span>
+        <img src="https://cdn.builder.io/api/v1/image/assets/0a50a19bf8954012b3474c20cf8bf513/b1d1cf3289fa3b59a5f506565e103719ee37961020ab7a1d794de84b616c7aea?apiKey=0a50a19bf8954012b3474c20cf8bf513&" alt="" class="projects-icon" />
+      </button>
+  
+
+    </main>
+    <div class="w3-container">
+     </div>
+    <div class="w3-content w3-display-container">
+
+
+      <div class="slider-container">
+        <!-- Slide 1 -->
+        <a href="https://application193.streamlit.app/" target="_blank">
+          <img src="Black Illustration Covid Virus Facebook Post.jpg" class="mySlides" alt="Slide 1">
+        </a>
+        <!-- Slide 2 -->
+        <a href="https://application193.streamlit.app/" target="_blank">
+          <img src="Yellow and Black Murder Mystery Invitation.jpg" class="mySlides" alt="Slide 2">
+        </a>
+        <!-- Slide 3 -->
+        <a href="https://application193.streamlit.app/" target="_blank">
+          <img src="1.jpg" class="mySlides" alt="Slide 3">
+        </a>
+        <!-- Slide 4 -->
+        <a href="https://application193.streamlit.app/" target="_blank">
+          <img src="Active Business.jpeg" class="mySlides" alt="Slide 4">
+        </a>
+      
+        <!-- Slider Titles -->
+        <div id="slider-title" class="slider-title">Title for Slide 1</div>
+      
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="next" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+      
+      <script>
+
+
+  var slideIndex = 1;
+  var slideTitles = [
+    "Highlighting efforts, data, and strategies related to the COVID-19 crisis.",
+    "Analyzing trends and data to ensure safer communities- Crime Rates.",
+    "Focusing on insights and solutions for tackling drug overdose challenges.",
+    "Showcasing strategies and innovations for sustainable business growth."
+  ];
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var title = document.getElementById("slider-title");
+
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    title.textContent = slideTitles[slideIndex - 1];
+  }
+
+     
+      </script>
+    <div class="divider"></div>
+  
+    <section class="contact-section">
+      <div class="contact-columns">
+        <div class="contact-text-column">
+          <div class="contact-text-content">
+            <div class="contact-heading-wrapper">
+              <h2 class="contact-heading">Let's talk with us</h2>
+              <p class="contact-description">
+                Questions, comments, or suggestions? Simply fill in the form and we'll be in touch shortly.
+              </p>
+            </div>
+            <div class="contact-spacer"></div>
+          </div>
+        </div>
+        <div class="contact-form-column">
+          <form class="contact-form">
+            <div class="form-fields">
+              <div class="name-fields">
+                <div class="first-name-wrapper">
+                  <label for="firstName" class="visually-hidden">First Name</label>
+                  <input type="text" id="firstName" class="first-name-input" placeholder="First Name" required />
+                </div>
+                <div class="last-name-wrapper">
+                  <label for="lastName" class="visually-hidden">Last Name</label>
+                  <input type="text" id="lastName" class="last-name-input" placeholder="Last Name" required />
+                </div>
+              </div>
+              <div class="email-wrapper">
+                <label for="email" class="visually-hidden">Email</label>
+                <input type="email" id="email" class="email-input" placeholder="Email" required />
+              </div>
+              <div class="phone-wrapper">
+                <label for="phone" class="visually-hidden">Phone Number</label>
+                <input type="tel" id="phone" class="phone-input" placeholder="Phone Number" required />
+              </div>
+              <div class="message-wrapper">
+                <label for="message" class="visually-hidden">Your Message</label>
+                <textarea id="message" class="message-input" placeholder="Your message..." required></textarea>
+              </div>
+            </div>
+            <div class="submit-wrapper">
+              <button type="submit" class="submit-button">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="copyright">© 2024 Created By Akash Arvikar</div>
+        <div class="social-links">
+          <span class="social-text">Find us on:</span>
+          <img src="https://cdn.builder.io/api/v1/image/assets/0a50a19bf8954012b3474c20cf8bf513/be479e7d5c74a1fa074a5a7785174daa68b45779afa11f6d6aed853f67503c9c?apiKey=0a50a19bf8954012b3474c20cf8bf513&" alt="Social Media Link 1" class="social-icon-primary" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/0a50a19bf8954012b3474c20cf8bf513/b94d51302743ee6a533cce673f7f55addf7bc5374496bab60aea0141d04a618d?apiKey=0a50a19bf8954012b3474c20cf8bf513&" alt="Social Media Link 2" class="social-icon-secondary" />
+        </div>
+      </div>
+      </div>
+    </footer>
+  </div>
+</html>
